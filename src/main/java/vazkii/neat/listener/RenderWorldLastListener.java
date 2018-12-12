@@ -1,7 +1,7 @@
 package vazkii.neat.listener;
 
-import net.minecraft.client.renderer.RenderGlobal;
+import net.minecraft.client.renderer.WorldRenderer;
 
 public interface RenderWorldLastListener {
-    void onRenderWorldLast(RenderGlobal renderGlobal, float partialTicks);
+    void onRenderWorldLast(WorldRenderer worldRenderer, float partialTicks);
 }

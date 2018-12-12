@@ -9,8 +9,8 @@ import vazkii.neat.listener.GameSettingsLoadListener;
 
 public class ToggleKeybind implements GameSettingsLoadListener, KeybindHandler {
 
-	KeyBinding key;
-	boolean down;
+	private KeyBinding key;
+	private boolean down;
 	
 	public ToggleKeybind() {
 		key = new KeyBinding("neat.keybind.toggle", -1, "key.categories.misc");
@@ -23,10 +23,10 @@ public class ToggleKeybind implements GameSettingsLoadListener, KeybindHandler {
 
 	@Override
 	public void processKeybinds() {
-		Minecraft mc = Minecraft.getMinecraft();
+		Minecraft mc = Minecraft.getInstance();
 		boolean wasDown = down;
 		down = key.isKeyDown();
-		if(mc.mouseHelper.isMouseFocused() && down && !wasDown)
+		if(mc.mouseHelper.isMouseGrabbed() && down && !wasDown)
 			NeatConfig.draw = !NeatConfig.draw;
 	}
 	

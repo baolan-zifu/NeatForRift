@@ -4,7 +4,7 @@
   "refmap": "mixins.neat.refmap.json",
   "mixins": [],
   "client": [
-    "MixinEntityRenderer",
+    "MixinGameRenderer",
     "MixinGameSettings",
     "MixinWorldClient"
   ]

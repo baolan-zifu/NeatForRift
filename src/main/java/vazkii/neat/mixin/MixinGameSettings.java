@@ -12,6 +12,7 @@ import vazkii.neat.listener.GameSettingsLoadListener;
 public class MixinGameSettings {
     @Inject(method = "loadOptions", at = @At("HEAD"))
     private void onLoadOptions(CallbackInfo ci) {
+        //GameSettings.class.newInstance().loadOptions();
         for (GameSettingsLoadListener listener : RiftLoader.instance.getListeners(GameSettingsLoadListener.class)) {
             listener.onLoadOptions((GameSettings) (Object) this);
         }
